@@ -20,7 +20,12 @@ import {
   GallerySection, 
   ReservationAndFooter 
 } from './components/Sections';
-import { MIXED_SECTION_1_SLIDES, MIXED_SECTION_2_SLIDES } from './constants';
+import { 
+  MIXED_SECTION_1_SLIDES, 
+  MIXED_SECTION_2_SLIDES, 
+  MIXED_SECTION_1_FIXED, 
+  MIXED_SECTION_2_FIXED 
+} from './constants';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -88,7 +93,7 @@ const App: React.FC = () => {
         
         {/* Mixed Layout 1: Left Fixed, Right Slider */}
         <MixedSection 
-          fixedImage="https://picsum.photos/id/1060/800/800"
+          fixedImage={MIXED_SECTION_1_FIXED}
           slides={MIXED_SECTION_1_SLIDES}
           direction="right"
         />
@@ -97,7 +102,7 @@ const App: React.FC = () => {
 
         {/* Mixed Layout 2: Left Slider, Right Fixed */}
         <MixedSection 
-          fixedImage="https://picsum.photos/id/102/800/800"
+          fixedImage={MIXED_SECTION_2_FIXED}
           slides={MIXED_SECTION_2_SLIDES}
           direction="left"
         />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { LOGO_URL } from '../constants';
 
 // Sticky Header
 export const Header: React.FC<{ onOpenMobileMenu: () => void }> = ({ onOpenMobileMenu }) => {
@@ -22,11 +23,10 @@ export const Header: React.FC<{ onOpenMobileMenu: () => void }> = ({ onOpenMobil
 
   return (
     <header className={`fixed top-0 w-full z-[1000] bg-dark px-5 py-4 flex justify-between items-center transition-transform duration-300 ${isHidden ? '-translate-y-full' : 'translate-y-0'}`}>
-      <div className="w-[200px] md:w-[250px]">
-        {/* Placeholder for Logo */}
-        <div className="text-white font-serif text-2xl font-bold flex items-center gap-2">
-            <i className="fas fa-utensils text-btn-red"></i> 無名牛排
-        </div>
+      <div className="w-[200px] md:w-[250px] flex items-center">
+        <a href="#home" className="block">
+          <img src={LOGO_URL} alt="無名牛排" className="max-h-[60px] w-auto object-contain" />
+        </a>
       </div>
       
       <button 
